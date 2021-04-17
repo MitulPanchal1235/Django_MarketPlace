@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Home
+{% endblock title %}
+{% block body %}
+<div class="search">
+  <form class="form-inline" method="GET">
+    {% csrf_token %}
+    {{mf.form}}
+    <input class="btn-outline" type="submit" value="search">
+  </form>
+</div>
+
+{% for i in data %}
+
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{i.p1.url}}" alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title">{{i.name}}</h4>
+      <p class="card-text">Rs.{{i.cost}}</p>
+      <p class="card-text">{{i.time}}</p>
+      <p class="card-text">{{i.dop}}</p>
+      <a href="{% url 'view' i.id %}" class="btn-primary"><i class="fas fa-external-link-alt"></i> View</a>
+    </div>
+  </div>
+  <script>
+    document.getElementById("id_").placedholder="search";
+  </script>
+{% endfor %}
+
+
+{% endblock body %}

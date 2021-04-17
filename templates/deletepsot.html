@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  delete post
+{% endblock title %}
+{% block body %}
+<fieldset>
+        <legend>Confirmation</legend>
+        <p class="dp">Are sure you want to delete : {{form.name}}</p>
+    <form action="" method='POST'>
+        {% csrf_token %}
+    <a class="da"href="{% url 'profile' %}">cancle</a>
+    <input class="di" type="submit" value="delete" name="confirm">
+    </form>
+    </fieldset>
+{% endblock body %}

@@ -1,0 +1,88 @@
+.wrapperu {
+    position: static;
+      top: 56%;
+      left: 50%;
+      /*transform: translate(-2%, 10%);*/
+      width: 70%;
+      height: 1350px;
+      margin: 10px 150px;
+      background-color: white;
+      padding:20px; 
+      border-radius: 8px; 
+    }
+    h1 {
+      text-align: center; 
+    }
+    .wrapperu .form-containeru .submitu{
+        background-color: black;
+        color: white;
+        font-size: 24px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 25px;
+        padding-left: 25px;
+        border-radius: 5px;
+        border:2px solid black;
+        transform: translate(60px,20px);
+      }
+      .wrapperu .form-containeru label{
+          font-size: larger;
+          color: gray;
+      }
+      .wrapperu .form-containeru #id_user,#id_name,#id_cost,#id_time,#id_detail,#id_contact,#id_category{
+        position:all;
+        width: 40%;
+        height: 40px;
+        border-radius: 5px;
+        padding: 6px;
+        border:2px solid lightgrey;
+        color:black;
+        font-size: 16px;
+        transition: all 0.3s ease-in-out;
+      
+      }
+      .wrapperu .form-containeru #p1-clear_id,#p2-clear_id,#p3-clear_id,#p4-clear_id,#video-clear_id{
+         display: none;
+      }
+
+      .wrapperu .form-containeru a{
+          text-decoration: none;
+          color: black;
+      }
+      .wrapperu .form-containeru #id_p1,#id_p2,#id_p3,#id_p4,#id_video{
+        position:all;
+        width: 40%;
+        height: 40px;
+        border-radius: 5px;
+        padding: 5px;
+        border:2px solid transparent;
+        color:black;
+        font-size: 16px;
+        transition: all 0.3s ease-in-out;
+      
+      }
+      .wrapperu .form-containeru .submitu:hover{
+        background-color:#0298FA;
+        border:2px solid #0298FA;
+        color: black;
+      }
+      .wrapperu .form-containeru textarea
+      {
+        position:all;
+        width: 40%;
+        height: 100px;
+        border-radius: 5px;
+        padding: 10px;
+        border:2px solid lightgrey;
+        color:black;
+        font-size: 16px;
+        transition: all 0.3s ease-in-out;
+      }
+    .wrapperu .imgdivu img
+    {   display: block;
+        margin-top: 2%;
+        width: 300px;
+        height: 200px;
+        border-radius: 10px;
+        transform: translate(170%,-520%);
+    }

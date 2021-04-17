@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>profile</title>
+</head>
+<body>
+<form action="" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+{{form}}
+<input type="submit" name="submit">
+</form>
+</body>

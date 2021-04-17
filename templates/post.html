@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  Post
+{% endblock title %}
+{% block body %}
+<div class="wrapperp" >
+    <h1><i class="fas fa-paper-plane"></i>  Post here!</h1>
+    <div class="form-containerp">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>User</label><br>
+        {{form.user}}<br><br>
+        <label>Product Name</label><br>
+        {{form.name}}<br><br>
+        <label>Price</label><br>
+        {{form.cost}}<br><br>
+        <label>Contact</label><br>
+        {{form.contact}}<br><br>
+        <label>Time Period</label><br>
+        {{form.time}}<br><br>
+        <label>Category</label><br>
+        {{form.category}}<br><br>
+        <label>Product Detail</label><br>
+        {{form.detail}}<br><br>
+        <label>Index picture</label><br>
+        {{form.p1}}<br>
+        <label>second picture</label><br>
+        {{form.p2}}<br>
+        <label>third picture</label><br>
+        {{form.p3}}<br>
+        <label>fourth picture</label><br>
+        {{form.p4}}<br>
+        <label>Video if any</label><br>
+        {{form.video}}
+
+      <input type="submit" class="submitp" value="Post" onclick="fun()">      
+    </form>
+    </div>
+<div class="imgdiv">
+    <img src="{% static "media/dftimg.png" %}" alt="error" class="proimg1">
+    <img src="{% static "media/dftimg.png" %}" alt="error" class="proimg2">
+    <img src="{% static "media/dftimg.png" %}" alt="error" class="proimg3">
+    <img src="{% static "media/dftimg.png" %}" alt="error" class="proimg4">
+  </div>
+
+</div>
+<script>
+    document.getElementById("id_user").disabled = true;
+    function fun()
+    {
+        document.getElementById("id_user").disabled = false;
+    }
+    $(function () {
+        $("#id_p1").change(function () {
+            readURL1(this);
+        });
+        $("#id_p2").change(function () {
+            readURL2(this);
+        });
+        $("#id_p3").change(function () {
+            readURL3(this);
+        });
+        $("#id_p4").change(function () {
+            readURL4(this);
+        });
+    });
+    function readURL1(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) 
+            {
+                $(".proimg1").attr('src', e.target.result);
+            }
+        reader.readAsDataURL(input.files[0]);
+        }
+    }
+    function readURL1(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) 
+            {
+                $(".proimg1").attr('src', e.target.result);
+            }
+        reader.readAsDataURL(input.files[0]);
+        }
+    }
+    function readURL2(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) 
+            {
+                $(".proimg2").attr('src', e.target.result);
+            }
+        reader.readAsDataURL(input.files[0]);
+        }
+    }
+    function readURL3(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) 
+            {
+                $(".proimg3").attr('src', e.target.result);
+            }
+        reader.readAsDataURL(input.files[0]);
+        }
+    }
+    function readURL4(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) 
+            {
+                $(".proimg4").attr('src', e.target.result);
+            }
+        reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+{% endblock body %}
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static "css/post.css" %}">
+    <link rel="stylesheet" href="{% static "css/all.min.css" %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>post</title>
+</head>
+<body>
+   
+</body>
+</html>-->

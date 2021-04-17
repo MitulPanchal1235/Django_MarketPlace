@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  Posts
+{% endblock title %}
+{% block body %}
+<div class="wrapper" style="height: 650px;">
+    <h1 class="heading1"><i class="fas fa-address-card"></i>  User Profile</h1>
+    <div class="form-container">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+         {{proform.fullname.label}}<br>
+         {{proform.fullname}}<br><br>
+         {{proform.phone.label}}<br>
+         {{proform.phone}}<br><br>
+         {{proform.dob.label}} <h2 class="note">* YYYY-MM-DD</h2><br>
+         {{proform.dob}} <br><br>
+         {{proform.about.label}}<br>
+         {{proform.about}}<br><br>
+         {{proform.profileimage}}
+    <input type="submit" class="submit" value="Change/Save">      
+    </form>
+    </div>
+<div class="imgform">
+    <img src="{{data.profileimage.url}}" alt="error" class="proimg"> <br>
+    <strong>ProfileImage</strong>
+</div>
+
+</div>
+<h1 class="postsh1">Posts</h1>
+{% for pd in postdata  %}
+<div class="postd">
+    <img src="{{pd.p1.url}}" alt="derror">
+    <div class="innerdata">
+       <label for="">{{pd.name}}</label><br>
+       <label for="">Rs..{{pd.cost}}</label><br>
+       <label for="">{{pd.dop}}</label>
+       <div class="innerlink">
+       <a href="{% url 'view' pd.id %}" class="a1"><i class="fas fa-external-link-alt"></i> View</a>
+       <a href="{% url 'update' pd.id %}" class="a2"><i class="fas fa-edit"></i> Update</a>
+       <a href="{% url 'deletepost' pd.id %}" class="a3"><i class="fas fa-trash-alt"></i> Delete</a>
+       </div>
+    </div>
+   </div>
+{% endfor %}
+<script>
+    $(function () {
+        $("#id_profileimage").change(function () {
+            readURL(this);
+        });
+    });
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) 
+            {
+                $(".proimg").attr('src', e.target.result);
+            }
+        reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+{% endblock body %}
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static "css/profile.css" %}">
+    <link rel="stylesheet" href="{% static "css/all.min.css" %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>post</title>
+</head>
+<body>
+    
+</body>
+</html>-->

@@ -1,0 +1,261 @@
+body {
+     margin: 0;
+      font-family: Fjalla One;
+    background-image: url("indexback3.jpg");
+    background-repeat: no-repeat;
+    background-size: 1400px;
+}
+  
+.hdh1{
+  color: white;
+  font-size: 55px;
+  display: inline-flex;
+  margin-top: 140px;
+      margin-left: 130px;
+}
+#cart{
+      margin-top: 4px;
+    }
+    .proline ul
+    {
+      margin-left: 105px;
+      margin-top: 40px;
+      font-size: 26px;
+      color: white;
+    }
+    .page_button{
+      margin-top: 100px;
+      margin-left: 200px;
+    }
+    .page_button #index_login{
+      border:1px solid transparent;
+      color: white;
+      font-size: 30px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 16px;
+      padding-left: 16px;
+      border-radius: 15px;
+      border:1px solid #0dcaf0;
+      background-color: transparent;
+  
+    }
+    .page_button #index_login:hover{
+      background-color: #0dcaf0;
+      color: black;
+    }
+    .page_button .index_signup{
+      margin-left: 50px;
+      color: white;  
+      border:1px solid transparent;
+      font-size: 30px;
+      padding: 10px;
+       border-radius: 15px;
+         border:1px solid #0fc370;
+       background-color:transparent;
+
+    }
+    .page_button .index_signup:hover{
+      background-color: #0fc370;
+      color: black;
+    }
+/*-------------------------------------------------------------*/
+.container{
+  /*border:1px solid white;*/
+  font-family: Roboto;
+  background-color: rgba(0,0,0,0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+.close1{
+  color: white;
+  font-size: 42px; 
+  position: absolute;
+  margin-left: 8px; 
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+.close2{
+  color: white;
+  font-size: 42px; 
+  position: absolute;
+  margin-left: 652px; 
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+.backbox{  
+  background-color: #404040;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  transform: translate(0,-50%);
+  top:50%;
+  display: inline-flex;
+  margin-left: 300px;
+}
+
+.frontbox{
+  background-color: #fff5ee;
+  border-radius: 20px;
+  height: 58%;
+  width:24%;
+  z-index: 10;
+  position: absolute;
+  margin-top: 9.5%;
+  margin-right: 3%;
+  margin-left: 46%;
+  transition: right .8s ease-in-out;
+}
+
+.moving{
+  right:50%;
+}
+
+.loginMsg, .signupMsg{
+  width: 50%;
+  height: 100%;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.loginMsg .title,
+.signupMsg .title{
+  font-weight: 300;
+  font-size: 23px;
+  
+}
+
+.loginMsg p,
+.signupMsg p {
+  font-weight: 100;
+}
+
+.textcontent{
+  color:white;
+  margin-top:65px;
+  margin-left: 12%;
+}
+
+.loginMsg button,
+.signupMsg button {
+  background-color: #404040;
+  border: 2px solid white;
+  border-radius: 10px;
+  color:white;
+  font-size: 12px;
+  box-sizing: content-box;
+  font-weight: 300;
+  padding:10px;
+  margin-top: 20px;
+}
+
+/* front box content*/
+.login, .signup{
+  padding: 20px;
+  text-align: center;
+}
+#switch1:hover{
+background-color: #F0F3F4;
+color: black;
+}
+#switch2:hover{
+background-color: #F0F3F4;
+color: black;
+}
+.bt1:hover{
+  background-color:#c71585;
+
+}
+.login h1,
+.signup h1 {
+
+  color: #C20D4F ;
+  font-size:24px;
+}
+
+.inputbox{
+  margin-top:30px; 
+}
+
+.frontbox>.login>.inputbox>a{
+  
+  color: black;
+  font-size: 15px;
+  padding-left: 29px;
+  text-decoration: none;
+}
+.chbox{
+margin-left: -10px;
+  font-size: 10px;
+}
+.chbox2{
+  margin-left: -170px;
+}
+.eml1,#pass1
+{
+  display: block;
+  width: 100%;
+  height: 40px;
+  background-color:#D7DBDD ;
+  border: none;
+  margin-bottom:20px;
+  font-size: 16px;
+}
+
+
+.signname,#signpass,.signemail,#signpass2{
+  display: block;
+  width: 90%;
+  height: 40px;
+  background-color: #D7DBDD ;
+  border: none;
+  margin-bottom:20px;
+  margin-left: 15px;
+  font-size: 16px;
+}
+
+.login>form>.bt11,
+.signup>form>.bt1{
+  background-color:#de5d83 ;
+  border: none;
+  color:white;
+  font-size: 12px;
+  font-weight: 400;
+  box-sizing: content-box;
+  padding:10px;
+  border-radius: 10px;
+  width: 60px;
+  position: absolute;
+  right:30px;
+  bottom: 20px;
+  cursor: pointer;
+}
+
+/* Fade In & Out*/
+.login p {
+  cursor: pointer;
+  color:#404040;
+  font-size:15px;
+}
+
+.loginMsg, .signupMsg{
+  /*opacity: 1;*/
+  transition: opacity .8s ease-in-out;
+}
+
+.visibility{
+  opacity: 0;
+}
+
+.hide{
+  display: none;
+}
+.show1
+{
+display: contents;
+}

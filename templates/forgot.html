@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/forgot.css' %}">
+    <title>forgot Password</title>
+
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Forgot Password</h1>
+    
+        <!--form container-->
+        <div class="form-container">
+        <form action="" method="post">
+            <!--flexbox and it's items-->
+            <div class="flex">
+                <div class="flex-item">
+                <!--full name field-->
+                    <div class="field-container">
+                        <label for="full-name">User Name: <span class="required">*</span></label>
+                        <input type="text" name="full-name"   pattern="^([a-zA-Z]{2,} ?)+$" id="full-name" placeholder="Your full name" required="required" />
+                                     
+                    </div>
+                
+                 <!--email field-->
+                    <div class="field-container">
+                        <label for="email">Email: <span class="required">*</span></label>
+                        <input type="email" name="email" id="email" placeholder="Your email" required="required" />
+                    </div>
+    
+                  <!--password field-->
+                    <div class="field-container">
+                        <label for="passkey">Password: <span class="required">*</span></label>
+                        <div class="passkey-box">
+                        <input type="password" name="passkey" id="passkey" class="passkey" placeholder="Password" required="required" />
+                        </div>
+                    </div>
+    
+                    <!--confirm password field-->
+                    <div class="field-container">
+                        <label for="confirm-passkey">Confirm password: <span class="required">*</span></label>
+                        <div class="passkey-box">
+                        <input type="password" name="confirm-passkey" class="passkey" id="confirm-passkey" placeholder="Re-enter password" required="required">
+                        </div>
+                        <input type="checkbox" name="checkbox" class="chbox2" onclick="checkpass1()"><label class="showpasslabel">Show Password</label>
+                    </div>
+                    
+                </div>
+            </div>
+            <!--Submit button-->
+            <div class="center"><input type="submit" value="Submit" class="subbtn"></div>
+        </form>
+        </div>
+    
+    </div>
+    <script>
+        function checkpass1() {
+            var x=document.getElementById('confirm-passkey');
+            var y=document.getElementById('passkey');
+            if(x.type==="password")
+            {
+                x.type="text";
+                y.type="text";
+            }
+            else
+            {
+                x.type="password";
+                y.type="password"
+            }
+        }
+    </script>
+    
+</body>
+</html>

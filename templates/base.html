@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static "css/all.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/home.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/profile.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/post.css" %}">
+    <link rel="stylesheet" href="{% static "css/update.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/delete.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/view1.css" %}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <title>{% block title %}
+      {% endblock title %}</title> 
+</head>
+<body>
+    <header class="head">
+        <button type="button" class="menu" id="menu" onclick="showlist()"><i id="menui" class="fas fa-bars"></i></button>
+         <b class="hdh1"><i id="cart" class="fas fa-shopping-cart"></i>&nbsp;&nbsp;CollegeMarketplace</b>
+         <b class="userlabel">Hello,  {{request.user}}</b>
+           <button class="signout"><i class="fas fa-sign-out-alt"></i> <a id="signouta" href="{% url 'logoutuser' %}">Signout</a></button>
+           <ul type="none" class="list" id="list">
+           <li><i class="fa fa-home"></i>&nbsp;<a href="{% url 'home' %}" style="text-decoration: none; color: aliceblue;">Home</a></li>
+           <li><i class="fas fa-plus-circle"></i>&nbsp;<a class="ha" href="{% url 'post' %}"style="text-decoration: none; color: aliceblue;">Post</a></li>
+           <li><i class="fas fa-user-circle"> </i>&nbsp;<a class="ha" href="{% url 'profile' %}" style="text-decoration: none; color: aliceblue;">Profile</a></li>
+       </ul> 
+       </header>
+  
+       {% block body %}
+    {% endblock body %}
+    <script>
+        var i=0;
+        function showlist()
+        {
+          if(i===0)
+          {
+            document.getElementById("list").style.display="flex";
+             i=1;
+          }
+          else 
+          {
+            document.getElementById("list").style.display="none";
+             i=0;
+    
+          }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+  {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login signup</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/all.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+  
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+   $(document).ready(function(){
+   $(".signup").toggleClass("hide");
+   $(".container").addClass("hide");
+   $(".close2").addClass("hide");
+  
+  $(".close1").click(function(){
+    $(".container").addClass("hide");
+  }); 
+
+  $(".close2").click(function(){
+    $(".container").addClass("hide");
+    $(".close2").addClass("hide");
+  $(".close1").removeClass("hide");
+  $(".frontbox").removeClass("moving");
+ $(".signup").removeClass("show1");
+  $(".login").toggleClass("hide");
+  }); 
+  
+  $(".index_signup").click(function(){
+  $(".container").removeClass("hide");
+  $('.close2').removeClass("hide")
+  $(".close1").addClass("hide");
+  $(".frontbox").addClass("moving");
+  $(".signup").addClass("show1");
+  $(".login").toggleClass("hide");
+  });
+
+  $("#index_login").click(function(){
+  $(".container").removeClass("hide");
+   });
+  
+  $("#switch1").click(function() {
+  $('.close2').removeClass("hide")
+  $(".close1").addClass("hide");
+  $(".frontbox").addClass("moving");
+  $(".signup").addClass("show1");
+  $(".login").toggleClass("hide");
+});
+  
+  $('#switch2').click(function() {
+  $(".close2").addClass("hide");
+  $(".close1").removeClass("hide");
+  $(".frontbox").removeClass("moving");
+ $(".signup").removeClass("show1");
+  $(".login").toggleClass("hide");
+});
+
+}) ;
+  </script>
+</head>
+<body>
+{% for m in messages %}
+      <p style="background-color:#de5d83; font-size:24px;">{{m}}</p>
+{% endfor %}
+<b class="hdh1"><i id="cart" class="fas fa-shopping-cart"></i>&nbsp;&nbsp;CollegeMarketplace</b>
+<div class="proline">
+ <ul type="none">
+   <li>Get pre-owned stuff at best prices in minimal time.</li>
+   <li>Explore with over hundreds of other people and get what you are looking for.</li>
+   <li>Find your customer in less time and get rid of your things.</li>
+ </ul>
+</div>
+<div class="page_button">
+   <button type="button" id="index_login"><i class="fas fa-sign-in-alt"></i> Login</button> 
+   <button class="index_signup"><i class="fas fa-user-plus"></i> Signup</button>
+</div>
+
+  <div class="container">
+
+    <div class="backbox">
+      <div class="close1">+</div>
+      <div class="loginMsg">
+        <div class="textcontent">
+          <p class="title">Don't have an account?</p>
+          <p>Sign-up to buy or sell your product.</p>
+          <button id="switch1">Sign Up</button>
+        </div>
+      </div>
+      <div class="close2">+</div>
+      <div class="signupMsg">
+        <div class="textcontent">
+          <p class="title">Have an account?</p>
+          <p>Login to buy or sell your product.</p>
+          <button id="switch2">LOGIN</button>
+        </div>
+      </div>
+    </div>
+    <!-- backbox -->
+
+    <div class="frontbox">
+      <div class="login">
+        <h1>LOGIN</h1>
+        <form action="" method="POST"class="inputbox">
+          {% csrf_token %}
+          <input type="text" name="username1" class="eml1" placeholder=" Username"  required>
+  <input type="password" name="password11" id="pass1"placeholder="  Password"required>
+        <input type="checkbox" name="checkbox" class="chbox" onclick="checkpass1()"><b>Show Password</b>
+        <a href="/forgot"><b>Forgot Password?</b></a>
+        <input type="submit" name="submit" class="bt11" value="LOGIN">
+      </form>
+      </div>
+      <div class="signup">
+        <h1>SIGN UP</h1>
+        <form action="{% url 'register' %}" method= "POST"class="inputbox">
+          {% csrf_token %}
+          <input type="text" name="username" class="signname" placeholder=" Username" required>
+          <input type="email" name="email" class="signemail"placeholder="  Email"required>
+          <input type="password" name="password1" id="signpass" placeholder="  Password" required>
+          <input type="password" name="password2" id="signpass2" placeholder="  Confirm Password" required>
+          <input type="checkbox" name="checkbox" class="chbox2" onclick="checkpass2()"><b>Show Password</b>
+          <input type="submit" name="submit" class="bt1" value="SUBMIT">
+          </form>
+      </div>
+
+    </div>
+     <!--frontbox -->
+  </div>
+  <script>
+    var i=0;
+  function showlist()
+  {
+      if(i===0)
+      {
+        document.getElementById("list").style.display="flex";
+         i=1;
+      }
+      else 
+      {
+        document.getElementById("list").style.display="none";
+         i=0;
+
+      }
+  }
+function checkpass1() {
+  var x = document.getElementById("pass1");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+function checkpass2() {
+  var x = document.getElementById("signpass");
+  var x2=document.getElementById("signpass2")
+  if (x.type === "password") {
+    x.type = "text";
+    x2.type="text";
+  } else {
+    x.type = "password";
+    x2.type="password";
+  }
+}
+
+</script>
+</body>
+</html>

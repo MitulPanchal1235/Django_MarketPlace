@@ -1,0 +1,86 @@
+aside{
+    width: 8%;
+    height: 8%;
+    margin-top: 5px;
+    background-color: rgba(0,0, 0, 0.6);
+    float: left;
+}
+	
+.hide{
+    display: none;
+}
+
+.main{
+    width: 45%;
+    height: 30%;
+    position: relative;
+    margin-left: 150px; 
+}
+.mimg{
+    width: 350px;
+    height: 350px;
+    padding-top: 5%;
+    padding-left: 5%;
+
+}
+.minside{
+ width: 1500px;
+ height: 700px;
+ position: absolute;
+ top: 0;
+ background-color: rgba(0,0,0,0.7);
+ transform: translate(-150px, 5px);
+}
+
+.v1{
+    width: 60%;
+    height: 70%;
+    margin-top: 100px;
+    cursor: pointer;
+    position: sticky;
+    top: 0;
+}
+.img1,.img2,.img3,.img4,.vp{
+    width: 100%;
+    height: 40%;
+
+  }
+   
+.block{
+   width: 50%;
+    height: 10%;
+    margin-left: 21px;
+    cursor:pointer; 
+    display: block;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.aside .block.active{
+   border:3px solid white ;
+
+}
+.about{
+    width: 500px;
+    height: 200px;
+    color:white;
+    position: absolute;
+    transform: translate(400px,-380px);
+}
+.proabout{
+    margin-top: 20px;
+    width: 300px;
+    height: 100px;
+    margin-left:40px ;
+}
+.proabout .proimgid{
+   width: 100px;
+   height: 100px;
+   border-radius: 50px;
+   
+}
+.proabout .prolabel{
+    font-size: 30px;
+    color: white;
+    transform: translate(110px,-80px);
+}

@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  View post
+{% endblock title %}
+{% block body %}
+<aside class="aside"> 
+	<div class="block active" onclick="changeImage(this)">
+		<img src="{{data.p1.url}}" class="img1">
+    </div>
+    <div class="block" onclick="changeImage(this)">
+		<img src="{{data.p2.url}}" class="img1">
+    </div>
+    <div class="block" onclick="changeImage(this)">
+		<img src="{{data.p3.url}}" class="img1">
+    </div>
+    <div class="block" onclick="changeImage(this)">
+		<img src="{{data.p4.url}}"class="img1">
+    </div>
+    <div class="block" onclick="changeImage(this)">
+  <img src="/static/videoposter.png" class="vp" onclick="changevideo('{{data.id}}')"></img>
+    </div>
+</aside>
+<div class="main">
+    <img src="{{data.p1.url}}" class="mimg">
+    <div class="about">
+        <p><h2>{{data.name}}</h2></p>
+        <p><h2>Time period:{{data.time}}</h2></p>
+        <p><h2>{{data.category}}</h2></p>
+        <p><h2>RS.{{data.cost}}</h2></p>
+        <p><h2>{{data.detail}}</h2></p>
+        <p><h2>contact:{{data.contact}}</h2></p>
+        <p><h2>{{data.dop}}</h2></p>
+    </div>
+    <div class="proabout">
+      <img src="{{profile.profileimage.url}}" class="proimgid">
+      <div class="prolabel">
+        <label class="prolabel">{{profile.user}}</label>
+      </div>
+    </div>
+    <div class="minside">
+        <center><video src=""  id="video1" class="v1" controls ></video></center>     
+    </div>
+    
+</div>
+
+<script>
+    $(document).ready(function() {
+		
+        $(".minside").addClass("hide"); 	
+
+         $(".vp").click(function()
+             {
+                 $(".minside").removeClass("hide");
+             });
+         $(".minside").click(function(){
+             $(".minside").addClass("hide");
+         });
+
+
+    });
+function changeImage(event)
+{
+    const temp=document.querySelector(".aside").children;
+  document.querySelector(".mimg").src=event.children[0].src;
+  for(let i=0;i<temp.length;++i)
+  {
+      temp[i].classList.remove("active");
+  }
+  event.classList.add("active");
+}
+async function changevideo(a)
+{
+        
+  var api_url="http://127.0.0.1:8000/video/".concat(a);
+        const response= await fetch(api_url);
+        const data=await response.json();
+        var v=document.getElementById("video1");
+        if(data.url!="")
+        {
+          var v1="/media/".concat(data.url);
+        
+        v.src=v1;
+        v.load();
+        }
+      
+}
+</script>
+{% endblock body %}

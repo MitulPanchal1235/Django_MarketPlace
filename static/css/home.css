@@ -1,0 +1,60 @@
+.search{
+	margin-top: 10px;
+	margin-left: 500px;
+	margin-bottom: 20px;
+
+
+}
+.search .form-contro{
+	padding: 10px;
+	border-radius: 10px;
+	font-size: 20px;
+	border:2px solid grey;
+
+}
+.search .btn-outline{
+	background-color: #0dca38;
+	border:2px solid #0dca38;
+	color: white;
+	font-size: 20px;
+	padding: 10px;
+	border-radius: 10px;
+}
+.search .btn-outline:hover{
+	background-color: #035516;
+	border:2px solid #025315;
+	color: white;
+}
+.card{
+	border: 1px solid #b9b1b1;
+    background-color: white;
+	height: 420px;
+	font-weight: 400;
+	font-size: 1rem;
+	text-align: left;
+	color: black;
+    margin-left:20px;
+	margin-top: 10px;
+	box-shadow: 10px 10px 10px black;
+    display: inline-block;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";	font-size: 15px;
+}
+.card .card-img-top{
+    width: 200px;
+    height: 200px;
+    margin-left: 40px;
+}
+.card .card-body
+{
+	margin-left: 20px;
+}
+.card .card-body .btn-primary
+{
+	border:2px solid #007bff;
+	text-decoration: none;
+	padding: 10px;
+color: white;
+border-radius: 6px;
+	background-color: #007bff;
+	
+}
